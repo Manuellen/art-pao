@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_URL } from "../config";
 
 export default function Contato() {
   const [formulario, setFormulario] = useState({
@@ -30,7 +31,7 @@ export default function Contato() {
 
     try {
       const resposta = await fetch(
-        "http://localhost:3001/api/contato",
+        `${API_URL}/api/contato`,
         {
           method: "POST",
 

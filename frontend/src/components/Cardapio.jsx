@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
+import { API_URL } from "../config";
 
 const categorias = [
   "Todos",
@@ -22,8 +23,8 @@ export default function Cardapio() {
     async function buscarCardapio() {
       try {
         const resposta = await fetch(
-          "http://localhost:3001/api/cardapio"
-        );
+            `${API_URL}/api/cardapio`
+          );
 
         if (!resposta.ok) {
           throw new Error("Não foi possível carregar o cardápio.");
